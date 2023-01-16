@@ -2,7 +2,7 @@ name: dummy_json_api
 description: A dummy json api made by tobycm
 
 
-version: 2.0.0
+version: 0.0.2
 homepage: https://github.com/tobycm/dummy-json-api
 repository: https://github.com/tobycm/dummy-json-api
 

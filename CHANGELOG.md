@@ -1,4 +1,4 @@
-## 2.0.0
+## 0.0.2
 
  - Added new routes and a random phone number generator
 
