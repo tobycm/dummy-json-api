@@ -4,6 +4,3 @@
 
 # Conventional directory for build output.
 build/
-
-# data directory for the app
-data/

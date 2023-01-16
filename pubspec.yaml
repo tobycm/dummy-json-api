@@ -1,7 +1,11 @@
 name: dummy_json_api
-description: A server app using the shelf package and Docker.
-version: 1.0.0
-# homepage: https://www.example.com
+description: A dummy json api made by tobycm
+
+
+version: 2.0.0
+homepage: https://github.com/tobycm/dummy-json-api
+repository: https://github.com/tobycm/dummy-json-api
+
 
 environment:
   sdk: '>=2.18.7 <3.0.0'
