@@ -1,10 +1,7 @@
 import 'dart:convert';
 import 'package:shelf/shelf.dart';
 
-const apiInfo = {
-  "made_by": "tobycm on GitHub",
-  "discord": "https://discord.com/users/487597510559531009"
-};
+import '../constants/api_info.dart';
 
 Response rootHandler(Request request) {
   return Response.ok(jsonEncode(apiInfo));

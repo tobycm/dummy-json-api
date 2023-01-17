@@ -1,11 +1,9 @@
 name: dummy_json_api
 description: A dummy json api made by tobycm
 
-
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/tobycm/dummy-json-api
 repository: https://github.com/tobycm/dummy-json-api
-
 
 environment:
   sdk: '>=2.18.7 <3.0.0'

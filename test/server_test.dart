@@ -1,7 +1,10 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:http/http.dart';
 import 'package:test/test.dart';
+
+import '../constants/api_info.dart';
 
 void main() {
   final port = '8080';
@@ -20,16 +23,10 @@ void main() {
 
   tearDown(() => p.kill());
 
-  test('Root', () async {
+  test('root_credit', () async {
     final response = await get(Uri.parse('$host/'));
     expect(response.statusCode, 200);
-    expect(response.body, 'Hello, World!\n');
-  });
-
-  test('Echo', () async {
-    final response = await get(Uri.parse('$host/echo/hello'));
-    expect(response.statusCode, 200);
-    expect(response.body, 'hello\n');
+    expect(response.body, jsonEncode(apiInfo));
   });
 
   test('404', () async {
