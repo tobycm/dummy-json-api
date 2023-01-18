@@ -5,11 +5,14 @@ import 'dart:convert';
 final Map<String, dynamic> countryCodes =
     jsonDecode(File('data/countryCodes.json').readAsStringSync());
 
-Future<String> generate() async {
+Future<Map<String, String>> generate() async {
   final random = Random();
 
-  String countryCode = countryCodes[countryCodes.keys
-      .elementAt(random.nextInt(countryCodes.length))]!['countryCode']!;
+  final Map<String, dynamic> countryCodeInfo = countryCodes[
+      countryCodes.keys.elementAt(random.nextInt(countryCodes.length))];
+
+  final String country = countryCodeInfo['isoCode']!;
+  String countryCode = countryCodeInfo['countryCode']!;
 
   String areaCode = '';
 
@@ -30,7 +33,7 @@ Future<String> generate() async {
     phoneNumber += random.nextInt(10).toString();
   }
 
-  return phoneNumber;
+  return {'phone_number': phoneNumber, 'country': country};
 }
 
 Future<int> main(List<String> args) async {

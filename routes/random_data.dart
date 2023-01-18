@@ -16,7 +16,7 @@ Future<Response> generateRandomData(Request request) async {
   Map<String, String> returnData = {};
 
   if (requestData.contains('phone_number')) {
-    returnData['phone_number'] = await phone_number.generate();
+    returnData = await phone_number.generate();
   }
 
   return Response.ok(jsonEncode(returnData));
