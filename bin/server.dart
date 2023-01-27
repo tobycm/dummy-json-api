@@ -11,7 +11,8 @@ import '../routes/random_data.dart';
 // Configure routes.
 final _router = Router()
   ..get('/', rootHandler)
-  ..get('/random', generateRandomData);
+  ..get('/random', generateRandomData)
+  ..post("/random", generateRandomData);
 
 void main(List<String> args) async {
   int port;
