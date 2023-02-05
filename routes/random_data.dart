@@ -14,16 +14,16 @@ Future<Response> generateRandomData(Request request) async {
 
   Map<String, dynamic> returnData = {};
 
-  for (var e in requestData) {
+  for (var query in requestData) {
     List<dynamic> data = <dynamic>[];
-    for (var i = 0; i < e.looping; i++) {
+    for (var i = 0; i < query.looping; i++) {
       var node_data;
-      if (e.requireData == "phone_number") {
+      if (query.requireData == "phone_number") {
         node_data = await phone_number.generate();
       }
       data.add(node_data);
     }
-    returnData[e.requireData] = data;
+    returnData[query.requireData] = data;
   }
 
   return Response.ok(jsonEncode(returnData));

@@ -1,7 +1,7 @@
 # how to request
 ## Get Method
 
-```GET /random?data=<name>[;number],...```
+```GET /random?data=<name>[;numberOfDoc],...```
 
 example :
 
@@ -18,7 +18,7 @@ body:
     [
         {
             name:<name>,
-            looping:[number]
+            looping:[number] (optional)
         }
     ]
 ```

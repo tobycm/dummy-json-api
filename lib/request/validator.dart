@@ -15,16 +15,17 @@ Future<dynamic> checkRequest(Request request) async {
     if (rawData.isEmpty) {
       return Response.badRequest(body: 'Invalid data parameter');
     }
-    for (var element in rawData) {
-      if (element.indexOf(";") >= 1) {
-        final option = element.split(";");
-        var looping = int.tryParse(option[1]);
-        if (looping == null) {
+
+    for (var data in rawData) {
+      if (data.indexOf(";") >= 1) {
+        final option = data.split(";");
+        var numberOfDoc = int.tryParse(option[1]);
+        if (numberOfDoc == null) {
           return Response.badRequest(body: "Invalid option");
         }
-        requestData.add(RequestDataNode(option[0], looping));
+        requestData.add(RequestDataNode(option[0], numberOfDoc));
       } else {
-        requestData.add(RequestDataNode(element, 1));
+        requestData.add(RequestDataNode(data, 1));
       }
     }
   } else if (request.method == "POST") {
